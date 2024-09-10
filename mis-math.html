@@ -95,7 +95,152 @@
 </p>
 <p>Where \( K(t-s) \) is the memory kernel describing non-Markovian dynamics and how past states influence the present.</p>
 
-<!-- Remaining sections can be similarly modified -->
+<h1>2. Mathematical Framework and Functional Analysis</h1>
+
+<h2>Scale-Dependent Structures and Operators</h2>
+<p><strong>Time-Evolving Block Decimation (TEBD)</strong>:</p>
+<p>
+  \[
+  |\Psi(t)\rangle = \sum_{i_1, \dots, i_N} \text{Tr}(A^{i_1}(t) \dots A^{i_N}(t)) |i_1 \dots i_N\rangle
+  \]
+</p>
+<p>Where \( A^{i_k}(t) \) are <strong>bounded linear operators</strong> acting on \( \mathcal{H}_i \). TEBD models quantum states and tracks their evolution over time.</p>
+
+<p><strong>Entanglement Growth Bound</strong>:</p>
+<p>
+  \[
+  \lambda_{\max}(t) \leq \exp(ct)
+  \]
+</p>
+<p>Where \( \lambda_{\max}(t) \) is the largest Schmidt coefficient, and \( c \) is the <strong>entanglement growth rate</strong>.</p>
+
+<h2>Group-Theoretic Structures</h2>
+<p><strong>Unitary Group Representation</strong>:</p>
+<p>
+  \[
+  U_g P_i \psi = P_j U_g \psi
+  \]
+</p>
+<p>Where \( g \in G \), a Lie group representing scale transformations. The unitary operator \( U_g \) acts on different Hilbert spaces.</p>
+
+<p><strong>Lie Algebra Structure</strong>:</p>
+<p>
+  \[
+  [T_a, T_b] = i f_{abc} T_c
+  \]
+</p>
+<p>The commutation relations between generators \( T_a \) of the Lie group are governed by the structure constants \( f_{abc} \).</p>
+
+<h2>Differential Geometry and Scale Transitions</h2>
+<p><strong>Renormalization Group Flow</strong>:</p>
+<p>
+  \[
+  R_{ij}(t) = \exp(tL) \cdot R_{ij}(0)
+  \]
+</p>
+<p>Where \( L \) is the <strong>Liouvillian operator</strong> governing the time evolution of the state between scales \( i \) and \( j \).</p>
+
+<p><strong>Spectral Properties of the Liouvillian</strong>:</p>
+<p>
+  \[
+  \sigma(L) = \{ \lambda_k \mid \text{Re}(\lambda_k) \leq 0 \}
+  \]
+</p>
+<p>Ensures convergence and stability of the flow under renormalization.</p>
+
+<h1>3. Consistency Proofs and Computational Complexity</h1>
+
+<h2>Strong Subadditivity of Entropy</h2>
+<p><strong>Strong Subadditivity</strong>:</p>
+<p>
+  \[
+  S(\rho_A) + S(\rho_B) \geq S(\rho_{A \cup B})
+  \]
+</p>
+<p>Proof ensuring that the total entropy in subsystems is additive, without double-counting or loss of information.</p>
+
+<h2>Spectral Stability</h2>
+<p><strong>Spectral Stability of Operators</strong>:</p>
+<p>
+  \[
+  \frac{d \sigma_i}{dt} = -i[H, \sigma_i] + D[\sigma_i]
+  \]
+</p>
+<p>Describes the stability of the spectrum under renormalization flow, where \( D[\sigma_i] \) is the dissipative term.</p>
+
+<h2>Hierarchical Circuit Complexity</h2>
+<p><strong>Hierarchical Circuit Complexity</strong>:</p>
+<p>
+  \[
+  C(|\Psi\rangle) = \text{poly}(\log(\dim(H_{\text{macro}}))) + \exp(\log(\dim(H_{\text{micro}})))
+  \]
+</p>
+<p>Quantifies the <strong>computational complexity</strong> of simulating quantum systems at different scales, with macro and micro complexity contributions.</p>
+
+<h1>4. Quantum-to-Classical Transition and Thermodynamic Limit</h1>
+
+<h2>Entropy Production Rate</h2>
+<p><strong>Entropy Production</strong>:</p>
+<p>
+  \[
+  \dot{S}(t) = \text{Tr}(\dot{\rho}(t) \log \rho(t))
+  \]
+</p>
+<p>Describes the rate at which entropy is produced in the system, satisfying the second law of thermodynamics.</p>
+
+<h2>Decoherence Functional</h2>
+<p><strong>Decoherence</strong>:</p>
+<p>
+  \[
+  D(\rho) = \sum_{i \neq j} |\rho_{ij}|^2
+  \]
+</p>
+<p>Quantifies the decay of off-diagonal elements in the density matrix, which describes the transition from quantum coherence to classicality.</p>
+
+<h2>Thermodynamic Limit</h2>
+<p><strong>Scaling Behavior in Thermodynamic Limit</strong>:</p>
+<p>
+  \[
+  S_N \sim N \log N
+  \]
+</p>
+<p>Describes the scaling of entropy as the number of particles or degrees of freedom \( N \) increases.</p>
+
+<h1>5. Advanced Mathematical Considerations</h1>
+
+<h2>Rényi Entropies</h2>
+<p><strong>Rényi Entropy</strong> for order \( \alpha \):</p>
+<p>
+  \[
+  S_\alpha(\rho_i) = \frac{1}{1-\alpha} \log(\text{Tr} \rho_i^\alpha)
+  \]
+</p>
+<p>Provides a generalized entropy measure across scales, reducing to von Neumann entropy when \( \alpha = 1 \).</p>
+
+<h2>Symplectic Geometry</h2>
+<p><strong>Symplectic Form</strong>:</p>
+<p>
+  \[
+  \omega = \sum_{i=1}^n dp_i \wedge dq_i
+  \]
+</p>
+<p>Defines the phase space in relativistic systems. <strong>Poisson brackets</strong> associated with this form are given by:</p>
+<p>
+  \[
+  \{f, g\} = \omega(df, dg)
+  \]
+</p>
+
+<h1>6. Quantum Error Correction</h1>
+
+<h2>Error-Corrected Entropy Bound</h2>
+<p><strong>Error-Corrected Entropy Bound</strong>:</p>
+<p>
+  \[
+  S_{\text{ent}}(s_i) \leq S_{\text{error corrected}} + \delta
+  \]
+</p>
+<p>Provides a bound on the entropy that can be recovered after applying quantum error correction techniques.</p>
 
 </body>
 </html>
