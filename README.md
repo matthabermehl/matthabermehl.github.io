@@ -1,5 +1,5 @@
 # Work on Multi-Scale Information Supervenience Theory and related matters.
-By Matt Habermehl
+By [Matt Habermehl](https://www.linkedin.com/in/matthabermehl/)
 
 Note: I have used various LLMs to assist in the outlines and mathematics.
 
