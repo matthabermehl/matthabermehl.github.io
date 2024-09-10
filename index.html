@@ -225,6 +225,9 @@ S_\alpha(\rho_i) = \frac{1}{1-\alpha} \log \left( \text{Tr}(\rho_i^\alpha) \righ
 <h1>1. Formal Axiomatization and Hilbert Space Structure</h1>
 
 <h2>Axiom 1: Scale-Dependent Information</h2>
+<p>
+This is a core formulation that expresses the total information of the system across different scales using the von Neumann entropy \( S(\rho(t)) \), quantum mutual information \( I(\rho_i(t) : \rho_j(t)) \), and quantum relative entropy \( S(\rho_i(t) \| \sigma_i(t)) \). These terms together provide a robust measure of how information behaves at various levels of granularity.
+</p>
 <p><strong>Total Information</strong>:</p>
 <p>
   \[
@@ -239,6 +242,9 @@ S_\alpha(\rho_i) = \frac{1}{1-\alpha} \log \left( \text{Tr}(\rho_i^\alpha) \righ
 </ul>
 
 <p><strong>Hilbert Space Decomposition</strong>:</p>
+    <p>
+The decomposition of the Hilbert space into subspaces \( \mathcal{H}_i \) for each scale is a fundamental aspect of the framework. Each projection operator \( P_i: \mathcal{H} \to \mathcal{H}_i \) facilitates the analysis of information at different scales.
+</p>
 <p>
   \[
   \mathcal{H} = \bigoplus_{i=1}^n \mathcal{H}_i
@@ -247,6 +253,9 @@ S_\alpha(\rho_i) = \frac{1}{1-\alpha} \log \left( \text{Tr}(\rho_i^\alpha) \righ
 <p>Projection operators \( P_i: \mathcal{H} \to \mathcal{H}_i \) project onto the subspace representing scale \( i \).</p>
 
 <h2>Axiom 2: Coarse-Graining and Information Loss</h2>
+    <p>
+The coarse-graining map \( \Lambda_i(\rho_i) \) projects fine-grained information into lower-dimensional subspaces, leading to information loss. The term \( \Delta S = S(\rho_j \| \Lambda_i(\rho_i)) \) quantifies this loss when transitioning from one scale to another.
+</p>
 <p><strong>Coarse-Graining Map</strong>:</p>
 <p>
   \[
@@ -273,6 +282,9 @@ S_\alpha(\rho_i) = \frac{1}{1-\alpha} \log \left( \text{Tr}(\rho_i^\alpha) \righ
 <p>Where \( f \) is a reconstruction map from \( \mathcal{H}_i \) to \( \mathcal{H}_j \). If the condition fails, emergence occurs.</p>
 
 <h2>Axiom 4: Category-Theoretic Transitions</h2>
+  <p>
+Category theory is used to model scale transitions as morphisms between Hilbert spaces, ensuring a consistent formalism for describing how information moves across scales. The functor \( F \) models transitions between categories, and tensor products capture how information combines across scales.
+</p>
 <p><strong>Category-Theoretic Formalism</strong>:</p>
 <p>
   \[
@@ -290,6 +302,10 @@ S_\alpha(\rho_i) = \frac{1}{1-\alpha} \log \left( \text{Tr}(\rho_i^\alpha) \righ
 <p>Tensor products across scales capture how information combines as transitions occur between different levels.</p>
 
 <h2>Axiom 5: Conservation and Memory</h2>
+  <p>
+This formalism describes how information is conserved over time, with the memory functional \( M(t) \) accounting for non-Markovian effects. The memory kernel \( K(t-s) \) captures how past states influence the present, and \( \sigma_{\text{info}}(t) \) represents information production over time.
+</p>
+
 <p><strong>Information Conservation Equation</strong>:</p>
 <p>
   \[
@@ -310,6 +326,9 @@ S_\alpha(\rho_i) = \frac{1}{1-\alpha} \log \left( \text{Tr}(\rho_i^\alpha) \righ
 
 <h2>Scale-Dependent Structures and Operators</h2>
 <p><strong>Time-Evolving Block Decimation (TEBD)</strong>:</p>
+  <p>
+The TEBD algorithm is a powerful computational method for simulating quantum many-body systems. It models quantum states and tracks their evolution over time. The operators \( A^{i_k}(t) \) represent bounded linear operators on the Hilbert space.
+</p>
 <p>
   \[
   |\Psi(t)\rangle = \sum_{i_1, \dots, i_N} \text{Tr}(A^{i_1}(t) \dots A^{i_N}(t)) |i_1 \dots i_N\rangle
@@ -318,6 +337,9 @@ S_\alpha(\rho_i) = \frac{1}{1-\alpha} \log \left( \text{Tr}(\rho_i^\alpha) \righ
 <p>Where \( A^{i_k}(t) \) are <strong>bounded linear operators</strong> acting on \( \mathcal{H}_i \). TEBD models quantum states and tracks their evolution over time.</p>
 
 <p><strong>Entanglement Growth Bound</strong>:</p>
+  <p>
+The bound on entanglement growth, where \( \lambda_{\max}(t) \) represents the largest Schmidt coefficient, provides insight into the limits of quantum entanglement as the system evolves over time. The growth rate \( c \) determines how quickly entanglement scales.
+</p>
 <p>
   \[
   \lambda_{\max}(t) \leq \exp(ct)
@@ -371,6 +393,9 @@ S_\alpha(\rho_i) = \frac{1}{1-\alpha} \log \left( \text{Tr}(\rho_i^\alpha) \righ
 <p>Proof ensuring that the total entropy in subsystems is additive, without double-counting or loss of information.</p>
 
 <h2>Spectral Stability</h2>
+  <p>
+This equation governs the stability of spectral properties under renormalization group flow. The dissipative term \( D[\sigma_i] \) accounts for any energy loss or decoherence effects in the system over time.
+</p>
 <p><strong>Spectral Stability of Operators</strong>:</p>
 <p>
   \[
@@ -380,6 +405,9 @@ S_\alpha(\rho_i) = \frac{1}{1-\alpha} \log \left( \text{Tr}(\rho_i^\alpha) \righ
 <p>Describes the stability of the spectrum under renormalization flow, where \( D[\sigma_i] \) is the dissipative term.</p>
 
 <h2>Hierarchical Circuit Complexity</h2>
+  <p>
+Hierarchical circuit complexity quantifies the computational difficulty of simulating quantum systems at different scales. The macro scale contributes polynomial complexity, while the micro scale exhibits exponential complexity, demonstrating the challenge of simulating fine-grained quantum systems.
+</p>
 <p><strong>Hierarchical Circuit Complexity</strong>:</p>
 <p>
   \[
@@ -391,6 +419,9 @@ S_\alpha(\rho_i) = \frac{1}{1-\alpha} \log \left( \text{Tr}(\rho_i^\alpha) \righ
 <h1>4. Quantum-to-Classical Transition and Thermodynamic Limit</h1>
 
 <h2>Entropy Production Rate</h2>
+  <p>
+Entropy production, as described by \( \dot{S}(t) = \text{Tr}(\dot{\rho}(t) \log \rho(t)) \), measures the rate at which a system produces entropy. This is central to understanding non-equilibrium systems and the second law of thermodynamics.
+</p>
 <p><strong>Entropy Production</strong>:</p>
 <p>
   \[
@@ -400,6 +431,9 @@ S_\alpha(\rho_i) = \frac{1}{1-\alpha} \log \left( \text{Tr}(\rho_i^\alpha) \righ
 <p>Describes the rate at which entropy is produced in the system, satisfying the second law of thermodynamics.</p>
 
 <h2>Decoherence Functional</h2>
+  <p>
+Decoherence is critical for the transition from quantum to classical behavior. The functional \( D(\rho) = \sum_{i \neq j} |\rho_{ij}|^2 \) captures how off-diagonal elements of the density matrix decay, which is a key signature of decoherence.
+</p>
 <p><strong>Decoherence</strong>:</p>
 <p>
   \[
@@ -420,6 +454,9 @@ S_\alpha(\rho_i) = \frac{1}{1-\alpha} \log \left( \text{Tr}(\rho_i^\alpha) \righ
 <h1>5. Advanced Mathematical Considerations</h1>
 
 <h2>Rényi Entropies</h2>
+  <p>
+Rényi entropy provides a generalization of the von Neumann entropy and offers a more nuanced measure of information distribution across quantum scales. When \( \alpha = 1 \), it reduces to the von Neumann entropy.
+</p>
 <p><strong>Rényi Entropy</strong> for order \( \alpha \):</p>
 <p>
   \[
@@ -429,6 +466,9 @@ S_\alpha(\rho_i) = \frac{1}{1-\alpha} \log \left( \text{Tr}(\rho_i^\alpha) \righ
 <p>Provides a generalized entropy measure across scales, reducing to von Neumann entropy when \( \alpha = 1 \).</p>
 
 <h2>Symplectic Geometry</h2>
+  <p>
+Symplectic geometry is applied to relativistic systems, where the symplectic form \( \omega \) defines the phase space. The associated Poisson brackets \( \{f, g\} = \omega(df, dg) \) describe the evolution of observables in this space.
+</p>
 <p><strong>Symplectic Form</strong>:</p>
 <p>
   \[
@@ -443,7 +483,9 @@ S_\alpha(\rho_i) = \frac{1}{1-\alpha} \log \left( \text{Tr}(\rho_i^\alpha) \righ
 </p>
 
 <h1>6. Quantum Error Correction</h1>
-
+<p>
+Quantum error correction plays a crucial role in preserving information across scales. The error-corrected entropy bound ensures that even after applying error correction techniques, the recovered information satisfies \( S_{\text{ent}}(s_i) \leq S_{\text{error corrected}} + \delta \).
+</p>
 <h2>Error-Corrected Entropy Bound</h2>
 <p><strong>Error-Corrected Entropy Bound</strong>:</p>
 <p>
