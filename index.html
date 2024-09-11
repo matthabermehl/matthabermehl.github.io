@@ -172,9 +172,9 @@ The decomposition of the Hilbert space into subspaces \( \mathcal{H}_i \) for ea
 </ul>
 
 
-<h1>2. Mathematical Framework and Functional Analysis</h1>
+<h2>2. Mathematical Framework and Functional Analysis</h2>
 
-<h2>Scale-Dependent Structures and Operators</h2>
+<h3>Scale-Dependent Structures and Operators</h3>
 <p><strong>Time-Evolving Block Decimation (TEBD)</strong>:</p>
   <p>
 The TEBD algorithm is a powerful computational method for simulating quantum many-body systems. It models quantum states and tracks their evolution over time. The operators \( A^{i_k}(t) \) represent bounded linear operators on the Hilbert space.
@@ -197,7 +197,7 @@ The bound on entanglement growth, where \( \lambda_{\max}(t) \) represents the l
 </p>
 <p>Where \( \lambda_{\max}(t) \) is the largest Schmidt coefficient, and \( c \) is the <strong>entanglement growth rate</strong>.</p>
 
-<h2>Group-Theoretic Structures</h2>
+<h3>Group-Theoretic Structures</h3>
 <p><strong>Unitary Group Representation</strong>:</p>
 <p>
   \[
@@ -214,7 +214,7 @@ The bound on entanglement growth, where \( \lambda_{\max}(t) \) represents the l
 </p>
 <p>The commutation relations between generators \( T_a \) of the Lie group are governed by the structure constants \( f_{abc} \).</p>
 
-<h2>Differential Geometry and Scale Transitions</h2>
+<h3>Differential Geometry and Scale Transitions</h3>
 <p><strong>Renormalization Group Flow</strong>:</p>
 <p>
   \[
@@ -231,9 +231,9 @@ The bound on entanglement growth, where \( \lambda_{\max}(t) \) represents the l
 </p>
 <p>Ensures convergence and stability of the flow under renormalization.</p>
 
-<h1>3. Consistency Proofs and Computational Complexity</h1>
+<h2>3. Consistency Proofs and Computational Complexity</h2>
 
-<h2>Strong Subadditivity of Entropy</h2>
+<h3>Strong Subadditivity of Entropy</h3>
 <p><strong>Strong Subadditivity</strong>:</p>
 <p>
   \[
@@ -242,7 +242,7 @@ The bound on entanglement growth, where \( \lambda_{\max}(t) \) represents the l
 </p>
 <p>Proof ensuring that the total entropy in subsystems is additive, without double-counting or loss of information.</p>
 
-<h2>Spectral Stability</h2>
+<h3>Spectral Stability</h3>
   <p>
 This equation governs the stability of spectral properties under renormalization group flow. The dissipative term \( D[\sigma_i] \) accounts for any energy loss or decoherence effects in the system over time.
 </p>
@@ -254,7 +254,7 @@ This equation governs the stability of spectral properties under renormalization
 </p>
 <p>Describes the stability of the spectrum under renormalization flow, where \( D[\sigma_i] \) is the dissipative term.</p>
 
-<h2>Hierarchical Circuit Complexity</h2>
+<h3>Hierarchical Circuit Complexity</h3>
   <p>
 Hierarchical circuit complexity quantifies the computational difficulty of simulating quantum systems at different scales. The macro scale contributes polynomial complexity, while the micro scale exhibits exponential complexity, demonstrating the challenge of simulating fine-grained quantum systems.
 </p>
@@ -266,9 +266,9 @@ Hierarchical circuit complexity quantifies the computational difficulty of simul
 </p>
 <p>Quantifies the <strong>computational complexity</strong> of simulating quantum systems at different scales, with macro and micro complexity contributions.</p>
 
-<h1>4. Quantum-to-Classical Transition and Thermodynamic Limit</h1>
+<h2>4. Quantum-to-Classical Transition and Thermodynamic Limit</h2>
 
-<h2>Entropy Production Rate</h2>
+<h3>Entropy Production Rate</h3>
   <p>
 Entropy production, as described by \( \dot{S}(t) = \text{Tr}(\dot{\rho}(t) \log \rho(t)) \), measures the rate at which a system produces entropy. This is central to understanding non-equilibrium systems and the second law of thermodynamics.
 </p>
@@ -280,7 +280,7 @@ Entropy production, as described by \( \dot{S}(t) = \text{Tr}(\dot{\rho}(t) \log
 </p>
 <p>Describes the rate at which entropy is produced in the system, satisfying the second law of thermodynamics.</p>
 
-<h2>Decoherence Functional</h2>
+<h3>Decoherence Functional</h3>
   <p>
 Decoherence is critical for the transition from quantum to classical behavior. The functional \( D(\rho) = \sum_{i \neq j} |\rho_{ij}|^2 \) captures how off-diagonal elements of the density matrix decay, which is a key signature of decoherence.
 </p>
@@ -292,7 +292,7 @@ Decoherence is critical for the transition from quantum to classical behavior. T
 </p>
 <p>Quantifies the decay of off-diagonal elements in the density matrix, which describes the transition from quantum coherence to classicality.</p>
 
-<h2>Thermodynamic Limit</h2>
+<h3>Thermodynamic Limit</h3>
 <p><strong>Scaling Behavior in Thermodynamic Limit</strong>:</p>
 <p>
   \[
@@ -301,9 +301,9 @@ Decoherence is critical for the transition from quantum to classical behavior. T
 </p>
 <p>Describes the scaling of entropy as the number of particles or degrees of freedom \( N \) increases.</p>
 
-<h1>5. Advanced Mathematical Considerations</h1>
+<h2>5. Advanced Mathematical Considerations</h2>
 
-<h2>Rényi Entropies</h2>
+<h3>Rényi Entropies</h3>
   <p>
 Rényi entropy provides a generalization of the von Neumann entropy and offers a more nuanced measure of information distribution across quantum scales. When \( \alpha = 1 \), it reduces to the von Neumann entropy.
 </p>
@@ -315,7 +315,7 @@ Rényi entropy provides a generalization of the von Neumann entropy and offers a
 </p>
 <p>Provides a generalized entropy measure across scales, reducing to von Neumann entropy when \( \alpha = 1 \).</p>
 
-<h2>Symplectic Geometry</h2>
+<h3>Symplectic Geometry</h3>
   <p>
 Symplectic geometry is applied to relativistic systems, where the symplectic form \( \omega \) defines the phase space. The associated Poisson brackets \( \{f, g\} = \omega(df, dg) \) describe the evolution of observables in this space.
 </p>
@@ -332,11 +332,11 @@ Symplectic geometry is applied to relativistic systems, where the symplectic for
   \]
 </p>
 
-<h1>6. Quantum Error Correction</h1>
+<h3>6. Quantum Error Correction</h3>
 <p>
 Quantum error correction plays a crucial role in preserving information across scales. The error-corrected entropy bound ensures that even after applying error correction techniques, the recovered information satisfies \( S_{\text{ent}}(s_i) \leq S_{\text{error corrected}} + \delta \).
 </p>
-<h2>Error-Corrected Entropy Bound</h2>
+<h3>Error-Corrected Entropy Bound</h3>
 <p><strong>Error-Corrected Entropy Bound</strong>:</p>
 <p>
   \[
