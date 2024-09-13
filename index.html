@@ -3,9 +3,20 @@
 <head>
   <meta charset="UTF-8">
   <title>Multi-Scale Information Supervenience Theory: A Unified Framework for Emergence and Information Flow</title>
-  <script type="text/javascript" async
+  
+  <!-- MathJax Configuration -->
+  <script type="text/javascript">
+    MathJax = {
+      tex: {
+        inlineMath: [['$', '$'], ['\\(', '\\)']],
+        displayMath: [['$$', '$$'], ['\\[', '\\]']]
+      }
+    };
+  </script>
+    <script type="text/javascript" async
     src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
   </script>
+
   <style>
     body {
       font-family: Georgia, serif;
@@ -133,7 +144,7 @@ We define the <strong>Scale-Dependent Information</strong> as:
 </p>
 
 <p>
-\[ I_{\text{total}}(t) = S\bigl(\rho(t)\bigr) + \sum_{i<j} I\bigl(\rho_i(t) \,;\, \rho_j(t)\bigr) + \sum_{i} S\bigl(\rho_i(t) \,\big\|\, \sigma_i(t)\bigr), \]
+\[ I_{\text{total}}(t) = S(\rho(t)) + \sum_{i<j} I(\rho_i(t) \,;\, \rho_j(t)) + \sum_i S(\rho_i(t) \,\Vert\, \sigma_i(t)), \]
 </p>
 
 where:
@@ -144,11 +155,11 @@ where:
     measures the total uncertainty in the quantum state.</li>
 
   <li><strong>Quantum Mutual Information</strong> between scales \( i \) and \( j \):
-    \[ I(\rho_i : \rho_j) = S(\rho_i) + S(\rho_j) - S(\rho_{ij}), \]
+    \[ I(\rho_i \,;\, \rho_j) = S(\rho_i) + S(\rho_j) - S(\rho_{ij}), \]
     quantifies the total correlations between subsystems at different scales, with \( \rho_{ij} = \operatorname{Tr}_{\overline{ij}}[\rho] \).</li>
 
   <li><strong>Quantum Relative Entropy</strong> between \( \rho_i \) and a reference state \( \sigma_i \):
-    \[ S\left(\rho_i \Vert \sigma_i\right) = \operatorname{Tr}\left[\rho_i (\log \rho_i - \log \sigma_i)\right], \]
+    \[ S(\rho_i \,\Vert\, \sigma_i) = \operatorname{Tr}\left[\rho_i (\log \rho_i - \log \sigma_i)\right], \]
     measures the distinguishability between the actual state and a reference state at scale \( i \).</li>
 </ul>
 
