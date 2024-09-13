@@ -2,111 +2,352 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Extending Multi-Scale Information Supervenience (MIS) Theory</title>
+    <title>Extending Multi-Scale Information Supervenience (MIS) Theory with Computational Equivalence, Pockets of Computability, and Effective Information</title>
+    <script type="text/javascript" async
+      src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
+    </script>
     <style>
         body {
-            font-family: Arial, sans-serif;
+            font-family: Georgia, serif;
             line-height: 1.6;
-            margin: 20px auto;
+            margin: 0 auto;
             max-width: 800px;
+            padding: 2rem;
         }
         h1, h2, h3, h4 {
             color: #333;
+            margin-top: 2rem;
         }
         h1 {
             font-size: 2em;
+            text-align: center;
         }
         h2 {
-            font-size: 1.75em;
-            margin-top: 1.5em;
+            font-size: 1.5em;
         }
         h3 {
-            font-size: 1.5em;
-            margin-top: 1.25em;
+            font-size: 1.25em;
         }
         h4 {
-            font-size: 1.25em;
-            margin-top: 1em;
+            font-size: 1.1em;
         }
         p {
-            margin: 1em 0;
+            margin-bottom: 1rem;
+        }
+        ul, ol {
+            margin-left: 1.5rem;
+        }
+        blockquote {
+            margin-left: 1.5rem;
+            font-style: italic;
+            color: #555;
+        }
+        hr {
+            border: none;
+            border-top: 1px solid #ccc;
+            margin: 2rem 0;
         }
         code {
             background-color: #f4f4f4;
             padding: 2px 4px;
             font-size: 1em;
         }
+        a {
+            color: #0645ad;
+            text-decoration: none;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
     </style>
 </head>
 <body>
 
-<h1>Extending Multi-Scale Information Supervenience (MIS) Theory with Computational Equivalence, Pockets of Computability, and Effective Information</h1>
+<h1>Extending Multi-Scale Information Supervenience Theory with Computational Equivalence, Pockets of Computability, and Effective Information</h1>
 
-<h3>Abstract</h3>
+<p><strong>Matthew Habermehl</strong><br>
+<em>September 2024</em></p>
+
+<hr>
+
+<h2>Abstract</h2>
 <p>
-    The <strong>Multi-Scale Information Supervenience (MIS) Theory</strong> provides a formal framework for understanding <strong>information flow</strong> across quantum and classical scales, addressing the emergent behaviors that arise as systems transition between these levels. While MIS effectively models the relationship between fine-grained (quantum) and coarse-grained (classical) information, it lacks a formal mechanism for characterizing <strong>computability</strong> within these emergent systems. This paper extends MIS Theory by incorporating <strong>Wolfram’s Principle of Computational Equivalence</strong> and the notion of <strong>pockets of computability</strong>, alongside <strong>Erik Hoel’s Effective Information (EI)</strong>, which quantifies the <strong>causal strength</strong> and <strong>computability</strong> of systems at different scales. By integrating these concepts, we provide a more detailed understanding of <strong>coarse-graining</strong>, <strong>emergence</strong>, and the role of the observer in identifying <strong>computable regions</strong> within complex informational landscapes.
+The <strong>Multi-Scale Information Supervenience (MIS) Theory</strong> provides a formal framework for understanding information flow across quantum and classical scales, addressing the emergent behaviors that arise as systems transition between these levels. While MIS Theory effectively models the relationship between fine-grained (quantum) and coarse-grained (classical) information, it lacks a formal mechanism for characterizing <strong>computability</strong> within these emergent systems. This paper extends MIS Theory by incorporating <strong>Wolfram’s Principle of Computational Equivalence</strong> and the notion of <strong>pockets of computability</strong>, alongside <strong>Erik Hoel’s Effective Information (EI)</strong>, which quantifies the causal strength and computability of systems at different scales. By integrating these concepts, we provide a more detailed understanding of coarse-graining, emergence, and the role of the observer in identifying computable regions within complex informational landscapes.
 </p>
+
+<hr>
 
 <h2>1. Introduction</h2>
 <p>
-    <strong>Multi-Scale Information Supervenience (MIS) Theory</strong> presents a rigorous approach to modeling how <strong>information changes across scales</strong>, focusing on the transition from quantum to classical systems. The theory addresses how <strong>emergent macroscopic phenomena</strong> supervene on, but are not reducible to, their quantum counterparts, emphasizing the <strong>coarse-graining</strong> process that simplifies quantum complexity into manageable classical information.
+The <strong>Multi-Scale Information Supervenience (MIS) Theory</strong> offers a robust framework for modeling how information behaves and transforms across different physical scales, particularly emphasizing the transition from quantum to classical systems. It addresses how emergent macroscopic phenomena supervene on, but are not reducible to, their quantum counterparts, highlighting the process of coarse-graining that simplifies quantum complexity into manageable classical information.
 </p>
 <p>
-    However, MIS Theory does not explicitly address how <strong>computability</strong> plays a role in this transition. This paper introduces new tools for understanding how <strong>coarse-grained, emergent systems</strong> are not just informationally simplified but also <strong>computationally tractable</strong>. By incorporating <strong>Stephen Wolfram’s Principle of Computational Equivalence</strong> and his idea of <strong>pockets of computability</strong>, as well as <strong>Erik Hoel’s Effective Information (EI)</strong>, we aim to enrich MIS Theory’s treatment of <strong>emergence and coarse-graining</strong>. These additions will provide a more formal mechanism for identifying <strong>where and when computability arises</strong> within the informational landscape described by MIS.
+However, MIS Theory does not explicitly address how <strong>computability</strong> plays a role in this transition. This paper introduces new tools for understanding how coarse-grained, emergent systems are not just informationally simplified but also computationally tractable. By incorporating <strong>Stephen Wolfram’s Principle of Computational Equivalence</strong> and his concept of <strong>pockets of computability</strong>, as well as <strong>Erik Hoel’s Effective Information (EI)</strong>, we aim to enrich MIS Theory’s treatment of emergence and coarse-graining. These additions will provide a formal mechanism for identifying where and when computability arises within the informational landscape described by MIS Theory.
 </p>
+
+<hr>
 
 <h2>2. Computational Equivalence and Pockets of Computability</h2>
 
-<h3>2.1 Wolfram's Principle of Computational Equivalence</h3>
+<h3>2.1. Wolfram's Principle of Computational Equivalence</h3>
 <p>
-    <strong>Wolfram’s Principle of Computational Equivalence</strong> asserts that most systems in nature, when sufficiently complex, are capable of <strong>universal computation</strong>. This principle suggests that beyond a certain threshold of complexity, the behavior of systems becomes <strong>computationally irreducible</strong>, meaning that their evolution cannot be simplified or predicted without running through every step of the process. However, Wolfram also acknowledges the existence of <strong>pockets of computability</strong>—localized regions within a complex system where the behavior is simpler and more <strong>computationally tractable</strong>.
+<strong>Stephen Wolfram’s Principle of Computational Equivalence</strong> posits that almost all processes that are not obviously simple can be viewed as computations of equivalent sophistication. Specifically, beyond a certain threshold of complexity, systems exhibit computational behaviors that are universal, meaning they are capable of emulating any other computation. This principle suggests that many natural systems are inherently computationally irreducible; their behavior cannot be predicted without simulating each computational step.
 </p>
 
-<h3>2.2. Pockets of Computability in MIS Theory</h3>
+<h3>2.2. Pockets of Computability in Complex Systems</h3>
 <p>
-    MIS Theory describes how <strong>information flows and transforms</strong> as we move between quantum and classical scales. By applying Wolfram's <strong>pockets of computability</strong> to this framework, we can understand <strong>macro-level systems</strong> as being more <strong>computationally accessible</strong> than their micro-level, quantum counterparts.
+Despite the prevalence of computational irreducibility, Wolfram also introduces the concept of <strong>pockets of computability</strong>—localized regions within a complex system where the behavior is simpler and more computationally tractable. In these regions, patterns emerge that can be described and predicted without simulating every underlying interaction.
+</p>
+<p>
+In the context of MIS Theory, this concept implies that while the microscopic quantum realm may be computationally irreducible, coarse-graining can reveal macroscopic properties that reside within pockets of computability. These emergent properties are more amenable to analysis and prediction, providing practical utility in understanding complex systems.
+</p>
+
+<h3>2.3. Formalizing Computational Equivalence in MIS Theory</h3>
+<p>
+To integrate Wolfram's principles into MIS Theory, we consider the computational complexity of the transformations between scales. Let us define:
 </p>
 <ul>
-    <li><strong>Micro-level complexity</strong>: At the quantum scale, systems are dense with information and often <strong>computationally irreducible</strong>. Predicting their behavior requires tracking a vast number of interactions, making them computationally complex.</li>
-    <li><strong>Macro-level computability</strong>: Coarse-grained, macro-level systems, on the other hand, provide <strong>simpler, emergent properties</strong> (e.g., temperature, pressure), which are <strong>computable</strong> in the sense that their behavior can be described and predicted with less informational complexity.</li>
+    <li><strong>Computational Complexity at Scale \( i \)</strong>: \( C(\rho_i) \), representing the resources required to simulate or predict the state \( \rho_i \).</li>
+    <li><strong>Computational Equivalence Threshold</strong>: A complexity level beyond which systems are computationally irreducible.</li>
 </ul>
 <p>
-    Thus, <strong>coarse-graining</strong> can be viewed as a process that <strong>reveals pockets of computability</strong> within the broader, complex system. The macro-level properties that emerge are not just informationally simplified but are also <strong>computationally tractable</strong>, allowing the observer to model and predict their behavior without needing to compute every underlying quantum interaction.
+The process of coarse-graining from scale \( i \) to \( j \) via the CPTP map \( \Lambda_{i \rightarrow j} \) can reduce computational complexity:
 </p>
+<p>
+\[ C(\rho_j) \ll C(\rho_i) \]
+</p>
+<p>
+This reduction occurs because \( \rho_j \) captures emergent properties that reside within pockets of computability, making the system's behavior at scale \( j \) more accessible to analysis.
+</p>
+
+<hr>
 
 <h2>3. Effective Information and Causal Strength</h2>
 
-<h3>3.1 Effective Information (EI) as a Measure of Computability</h3>
+<h3>3.1. Erik Hoel’s Effective Information (EI)</h3>
 <p>
-    <strong>Erik Hoel’s Effective Information (EI)</strong> provides a formal tool for quantifying <strong>causal strength</strong> within a system. EI measures how much the state of one variable (X) influences the state of another variable (Y) through <strong>interventions</strong>. A system with high EI has <strong>strong causal relationships</strong>, meaning that its behavior is <strong>highly deterministic and predictable</strong>.
+<strong>Effective Information (EI)</strong> is a measure introduced by Erik Hoel to quantify the causal relationships within a system. EI is defined as the mutual information between the interventions on a system's causal variables and the system's resulting states. Formally, for a system with variables \( X \) and \( Y \), the EI is:
 </p>
 <p>
-    In the context of <strong>MIS Theory</strong>, <strong>EI</strong> offers a way to <strong>measure computability</strong> within the system:
+\[ \text{EI} = I(\text{Interventions on } X ; Y) \]
+</p>
+<p>
+This measure captures how much the system's outputs are determined by its inputs, reflecting the strength of causation and, by extension, the system's computability.
+</p>
+
+<h3>3.2. Incorporating EI into MIS Theory</h3>
+<p>
+In MIS Theory, we can use EI to assess the causal strength at different scales. At the macroscopic scale \( j \), the coarse-grained state \( \rho_j \) may exhibit higher EI compared to the microscopic state \( \rho_i \), due to the aggregation of variables and the suppression of microscopic noise.
+</p>
+<p>
+Let us define:
 </p>
 <ul>
-    <li>A system with <strong>high EI</strong> is <strong>computable</strong> because its causal relationships are strong and interventions lead to <strong>deterministic outcomes</strong>. The system’s behavior is tractable and can be predicted without needing to run through the entire complexity of the underlying micro-level details.</li>
-    <li>A system with <strong>low EI</strong>, on the other hand, has weak causal relationships, making its behavior <strong>harder to compute</strong>. In such cases, interventions do not lead to clear, deterministic outcomes, and the system’s complexity remains irreducible.</li>
+    <li><strong>EI at Scale \( i \)</strong>: \( \text{EI}_i = I(\text{Interventions on } X_i ; Y_i) \)</li>
+    <li><strong>EI at Scale \( j \)</strong>: \( \text{EI}_j = I(\text{Interventions on } X_j ; Y_j) \)</li>
 </ul>
-
-<h3>3.2 Coarse-Graining as Maximizing EI</h3>
 <p>
-    Incorporating <strong>EI</strong> into MIS Theory allows us to view <strong>coarse-graining</strong> as the process of finding the scale at which <strong>EI is maximized</strong>. The <strong>macro-level properties</strong> that emerge through coarse-graining are more <strong>computable</strong> because they exhibit <strong>stronger causal relationships</strong> than the micro-level details, making them <strong>deterministic and easier to predict</strong>.
+Typically, we find that:
+</p>
+<p>
+\[ \text{EI}_j > \text{EI}_i \]
+</p>
+<p>
+This inequality suggests that the macroscopic scale has stronger causal relationships and is thus more computationally tractable.
 </p>
 
-<h2>4. An Enriched View of Coarse-Graining and Computability</h2>
+<h3>3.3. Causal Emergence through Coarse-Graining</h3>
 <p>
-    By integrating <strong>Effective Information (EI)</strong> and <strong>pockets of computability</strong> into MIS Theory, we gain a more nuanced understanding of <strong>how and where computability arises</strong>:
+The increase in EI through coarse-graining indicates a phenomenon known as <strong>causal emergence</strong>. By aggregating variables and eliminating microscopic details that contribute to randomness or unpredictability, the coarse-grained system exhibits stronger effective causal relationships.
+</p>
+<p>
+In MIS Theory, causal emergence can be formalized by considering the EI difference:
+</p>
+<p>
+\[ \Delta \text{EI} = \text{EI}_j - \text{EI}_i \]
+</p>
+<p>
+A positive \( \Delta \text{EI} \) signifies that the macroscopic description provides more effective information, enhancing our ability to predict and understand the system's behavior.
+</p>
+
+<hr>
+
+<h2>4. Enhanced Framework of MIS Theory</h2>
+
+<h3>4.1. Integrating Computational Concepts into MIS Axioms</h3>
+<p>
+We now revisit the fundamental axioms of MIS Theory to incorporate computational equivalence and effective information, ensuring conceptual consistency and a more comprehensive framework.
+</p>
+
+<h4>Axiom 1 (Revised): Scale-Dependent Information and Computability</h4>
+<p>
+<strong>Statement</strong>: <em>The total information content and computational complexity of a physical system can be decomposed into contributions from different scales, each characterized by specific quantum information measures and computational properties that evolve according to scale-dependent dynamics.</em>
+</p>
+<p>
+The computational complexity at each scale \( i \) is given by \( C(\rho_i) \). The process of moving to a coarser scale \( j \) via coarse-graining reduces this complexity:
+</p>
+<p>
+\[ C(\rho_j) \leq C(\rho_i) \]
+</p>
+<p>
+This reduction is due to the emergence of pockets of computability at the macroscopic scale.
+</p>
+
+<h4>Axiom 2 (Revised): Coarse-Graining, Information Loss, and Computational Simplification</h4>
+<p>
+<strong>Statement</strong>: <em>Coarse-graining operations result in the loss of microscopic information and computational complexity, leading to simplified models that reside within pockets of computability.</em>
+</p>
+<p>
+The increase in entropy \( \Delta S_{i \rightarrow j} \) corresponds to a decrease in computational complexity:
+</p>
+<p>
+\[ \Delta C = C(\rho_i) - C(\rho_j) \geq 0 \]
+</p>
+<p>
+This reflects the simplification achieved through coarse-graining, making the system at scale \( j \) more computationally accessible.
+</p>
+
+<h4>Axiom 3 (Revised): Emergence, Reconstruction, and Effective Information</h4>
+<p>
+<strong>Statement</strong>: <em>A macroscopic phenomenon is emergent if there exists no physically realizable reconstruction map that can fully recover the microscopic information, and if the effective information at the macroscopic scale exceeds that at the microscopic scale.</em>
+</p>
+<p>
+The reconstruction error \( \epsilon_{i \leftarrow j} \) and the increase in EI are linked:
+</p>
+<p>
+\[ \epsilon_{i \leftarrow j} > 0 \quad \text{and} \quad \Delta \text{EI} > 0 \]
+</p>
+<p>
+This indicates that while detailed microscopic information is lost (preventing perfect reconstruction), the macroscopic system gains stronger causal relationships, enhancing its computability.
+</p>
+
+<h4>Axiom 4 (Revised): Category-Theoretic Scale Transitions and Computational Structures</h4>
+<p>
+<strong>Statement</strong>: <em>Scale transitions can be modeled as functors between categories representing different computational structures, preserving the mathematical and computational properties relevant at each scale.</em>
+</p>
+<p>
+The functor \( F_{i \rightarrow j} \) now maps not only the mathematical structures but also the computational aspects, ensuring that computational simplifications are captured in the transition between categories.
+</p>
+
+<h4>Axiom 5 (Revised): Information Conservation, Memory Effects, and Computational Irreducibility</h4>
+<p>
+<strong>Statement</strong>: <em>The dynamics of information in a physical system are governed by conservation laws that include non-Markovian memory effects and computational irreducibility at the microscopic scale, leading to computational simplification at the macroscopic scale.</em>
+</p>
+<p>
+The computational irreducibility at the microscopic level is reflected in the complexity of the memory functional \( M(t) \). Coarse-graining reduces this complexity, leading to more tractable models.
+</p>
+
+<h3>4.2. Implications for MIS Theory</h3>
+<p>
+By integrating computational equivalence and effective information into MIS Theory, we achieve:
 </p>
 <ul>
-    <li><strong>Coarse-graining as a search for computability</strong>: The process of <strong>coarse-graining</strong> can be understood as the observer’s attempt to identify regions in the system where <strong>EI is maximized</strong> and the system becomes <strong>computable</strong>. These are the <strong>pockets of computability</strong> in Wolfram’s sense, where the system's behavior is deterministic and tractable.</li>
-    <li><strong>EI as a measure of emergent computability</strong>: <strong>Emergence</strong> can now be described not just in terms of informational supervenience, but in terms of <strong>computability</strong>. The <strong>macro-level systems</strong> that emerge through coarse-graining are <strong>computable pockets</strong> within an otherwise <strong>irreducibly complex micro-level landscape</strong>. These systems have <strong>high EI</strong>, meaning their causal structure is clear and strong, allowing the observer to predict their behavior with minimal complexity.</li>
+    <li><strong>A unified view of information and computation</strong>: Recognizing that information measures and computational complexity are intertwined across scales.</li>
+    <li><strong>A formalism for causal emergence</strong>: Quantifying how coarse-graining enhances effective information and leads to emergent computable structures.</li>
+    <li><strong>An explanation for the observer's role</strong>: Understanding that the identification of pockets of computability depends on the observer's choice of scale and coarse-graining methods.</li>
 </ul>
 
-<h2>5. Conclusion</h2>
+<hr>
+
+<h2>5. Applications and Examples</h2>
+
+<h3>5.1. Quantum to Classical Transition with Computability</h3>
 <p>
-    This paper extends <strong>MIS Theory</strong> by integrating <strong>Wolfram’s Principle of Computational Equivalence</strong>, <strong>pockets of computability</strong>, and <strong>Erik Hoel’s Effective Information (EI)</strong>. These concepts allow us to formalize the process of <strong>coarse-graining</strong> as a search for <strong>computability</strong> within a complex informational landscape. <strong>EI</strong> provides a metric for determining when and where <strong>emergent, macro-level systems</strong> are <strong>computable</strong>, while <strong>pockets of computability</strong> describe the regions where these systems become <strong>tractable</strong>. This enriched view of MIS Theory offers a deeper understanding of <strong>emergence, computability, and the observer’s role</strong> in identifying computable structures within complex systems.
+<strong>System</strong>: A quantum system exhibiting chaotic behavior at the microscopic scale but displaying regular, predictable patterns at the macroscopic scale.
 </p>
+<p>
+<strong>Analysis</strong>:
+</p>
+<ul>
+    <li><strong>Microscopic Scale (\( \mathcal{H}_i \))</strong>: The system's state \( \rho_i \) is computationally irreducible due to quantum chaos.</li>
+    <li><strong>Macroscopic Scale (\( \Gamma_j \))</strong>: Coarse-grained state \( \rho_j \) reveals regular patterns that are computationally tractable.</li>
+</ul>
+<p>
+<strong>Effective Information</strong>:
+</p>
+<p>
+At the macroscopic scale, the EI is higher:
+</p>
+<p>
+\[ \text{EI}_j > \text{EI}_i \]
+</p>
+<p>
+This indicates stronger causal relationships and enhanced predictability.
+</p>
+
+<h3>5.2. Cellular Automata and Pockets of Computability</h3>
+<p>
+<strong>System</strong>: A cellular automaton (e.g., Rule 110) known for its computational universality and complex behavior.
+</p>
+<p>
+<strong>Analysis</strong>:
+</p>
+<ul>
+    <li><strong>Microscopic Dynamics</strong>: The local update rules lead to computational irreducibility.</li>
+    <li><strong>Macroscopic Patterns</strong>: Coarse-graining can reveal repeating patterns or structures that are computationally simpler.</li>
+</ul>
+<p>
+<strong>Pockets of Computability</strong>:
+</p>
+<p>
+By identifying and focusing on these macroscopic patterns, we can make predictions about the system's behavior without simulating every microscopic interaction.
+</p>
+
+<hr>
+
+<h2>6. Discussion and Future Directions</h2>
+
+<h3>6.1. Implications for Complexity Science</h3>
+<p>
+The enhanced MIS Theory bridges the gap between information theory and computational complexity, offering new insights into complex systems. It provides a framework for understanding how emergent phenomena can be both informationally rich and computationally accessible.
+</p>
+
+<h3>6.2. Observer-Dependent Computability</h3>
+<p>
+The identification of pockets of computability is inherently observer-dependent. Different coarse-graining methods may reveal different computable structures. This highlights the role of the observer in selecting the appropriate scale and modeling approach.
+</p>
+
+<h3>6.3. Extensions to Other Fields</h3>
+<p>
+Potential applications extend beyond physics to fields such as:
+</p>
+<ul>
+    <li><strong>Neuroscience</strong>: Understanding how coarse-graining neural activity leads to computationally tractable models of cognition.</li>
+    <li><strong>Economics</strong>: Modeling market behaviors where macroeconomic indicators provide computable insights despite underlying complexities.</li>
+    <li><strong>Ecology</strong>: Studying ecosystems where emergent patterns (e.g., population dynamics) are more predictable than individual interactions.</li>
+</ul>
+
+<hr>
+
+<h2>7. Conclusion</h2>
+<p>
+By integrating Stephen Wolfram's Principle of Computational Equivalence and Erik Hoel's Effective Information into the Multi-Scale Information Supervenience Theory, we have developed a more comprehensive framework that accounts for both informational and computational aspects of emergence. This enriched theory provides a deeper understanding of how coarse-graining not only simplifies information but also enhances computability by revealing pockets of computability within complex systems.
+</p>
+<p>
+This work opens new avenues for research in complex systems, offering tools to identify and exploit computationally tractable structures. It underscores the importance of scale, coarse-graining methods, and the observer's role in shaping our understanding of the physical world.
+</p>
+
+<hr>
+
+<h2>References</h2>
+<ol>
+    <li><strong>Nielsen, M. A., & Chuang, I. L.</strong> (2010). <em>Quantum Computation and Quantum Information</em>. Cambridge University Press.</li>
+    <li><strong>Wolfram, S.</strong> (2002). <em>A New Kind of Science</em>. Wolfram Media.</li>
+    <li><strong>Hoel, E.</strong> (2017). <em>When the Map Is Better Than the Territory</em>. Entropy, 19(5), 188.</li>
+    <li><strong>Reed, M., & Simon, B.</strong> (1972). <em>Methods of Modern Mathematical Physics</em>. Academic Press.</li>
+    <li><strong>Zwanzig, R.</strong> (2001). <em>Nonequilibrium Statistical Mechanics</em>. Oxford University Press.</li>
+    <li><strong>Preskill, J.</strong> (2018). <em>Quantum Computing in the NISQ era and beyond</em>. Quantum, 2, 79.</li>
+    <li><strong>Schlosshauer, M.</strong> (2007). <em>Decoherence and the Quantum-to-Classical Transition</em>. Springer.</li>
+</ol>
+
+<hr>
+
+<h2>Acknowledgments</h2>
+<p>
+The author extends gratitude to colleagues in quantum physics, computational complexity, and theoretical computer science for their invaluable discussions and insights that have significantly contributed to this work.
+</p>
+
+<hr>
 
 </body>
 </html>
