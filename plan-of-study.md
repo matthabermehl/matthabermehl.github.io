@@ -1,4 +1,4 @@
-Certainly! To understand the formalisms of the Multi-Scale Information Supervenience (MIS) Theory efficiently, you'll need to grasp key concepts from several mathematical and physical disciplines. Below is a tightly focused plan of study designed for someone with limited time who wants to engage deeply with the MIS formalisms.
+# Plan of Study for MIS
 
 ---
 
