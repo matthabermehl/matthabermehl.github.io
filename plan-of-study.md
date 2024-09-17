@@ -16,7 +16,7 @@
   - Tensor products
 
 - **Resource:**
-  - **Book:** *Linear Algebra Done Right* by Sheldon Axler
+  - **Book:** [*Linear Algebra Done Right*](https://linear.axler.net/LADR4e.pdf) by Sheldon Axler
     - **Chapters to Focus On:** 1-5, 7 (Skip proofs if necessary; focus on understanding concepts)
 
 #### **1.2 Basics of Quantum Mechanics**
@@ -29,7 +29,7 @@
   - Measurement and eigenvalue problems
 
 - **Resource:**
-  - **Lecture Notes:** [*Quantum Mechanics* by David J. Griffiths](https://www.fisica.net/mecanica-quantica/Griffiths%20-%20Introduction%20to%20quantum%20mechanics.pdf) (Simplified version)
+  - **Lecture Notes:** [*Quantum Mechanics*](https://www.fisica.net/mecanica-quantica/Griffiths%20-%20Introduction%20to%20quantum%20mechanics.pdf)  by David J. Griffiths (Simplified version)
     - **Sections to Focus On:** Introduction, Mathematical Foundations, The Postulates
 
 ---
@@ -46,7 +46,7 @@
   - Purity and mixed states
 
 - **Resource:**
-  - **Book:** *Quantum Computation and Quantum Information* by Nielsen and Chuang
+  - **Book:** [*Quantum Computation and Quantum Information*](https://profmcruz.files.wordpress.com/2017/08/quantum-computation-and-quantum-information-nielsen-chuang.pdf) by Nielsen and Chuang
     - **Sections to Focus On:** 2.1-2.4, 11.1-11.3
 
 #### **2.2 Quantum Channels and CPTP Maps**
@@ -69,7 +69,7 @@
   - Universal gate sets
 
 - **Resource:**
-  - **Book:** *Quantum Computation and Quantum Information* by Nielsen and Chuang
+  - **Book:** [*Quantum Computation and Quantum Information*](https://profmcruz.files.wordpress.com/2017/08/quantum-computation-and-quantum-information-nielsen-chuang.pdf) by Nielsen and Chuang
     - **Sections to Focus On:** 4.5, 4.7
 
 ---
@@ -86,7 +86,7 @@
   - Circuit complexity basics
 
 - **Resource:**
-  - **Lecture Notes:** *Introduction to Computational Complexity* by Oded Goldreich
+  - **Lecture Notes:** [*Introduction to Computational Complexity*](https://www.wisdom.weizmann.ac.il/~oded/PS/CC/all.pdf) by Oded Goldreich
     - **Sections to Focus On:** Basic definitions and examples
 
 #### **3.2 Quantum Computational Complexity**
@@ -115,6 +115,7 @@
   - Fixed points and flow equations
 
 - **Resource:**
+  - **Note this resource does not exist. Probably [**Field Theory, the Renormalization Group, and Critical Phenomena**](http://web.phy.ntnu.edu.tw/~hongyi/notes/Books/Amit_Field%20Theory,%20the%20Renormalization%20Group%20and%20Critical%20Phenomena_1984_FI.pdf)
   - **Lecture Notes:** *Conceptual Foundations of the Renormalization Group* by Daniel J. Amit
     - **Sections to Focus On:** Introduction to RG concepts
 
@@ -125,7 +126,7 @@
   - Renormalization in Ising models
 
 - **Resource:**
-  - **Book Chapter:** *Statistical Mechanics* by R.K. Pathria
+  - **Book Chapter:** [*Statistical Mechanics*](http://linux0.unsl.edu.ar/~froma/MecanicaEstadistica/Bibliografia/PathriaBeale.pdf) by R.K. Pathria
     - **Focus On:** Chapter on renormalization group methods
 
 ---
@@ -142,7 +143,7 @@
   - Examples relevant to physics
 
 - **Resource:**
-  - **Book:** *Categories for the Working Physicist* by Bob Coecke (Available online)
+  - **Book:** [*Categories for the Working Physicist*](https://arxiv.org/pdf/0905.3010) by Bob Coecke (Available online)
     - **Sections to Focus On:** Chapters 1-3
 
 #### **5.2 Applications to Physics**
@@ -170,7 +171,7 @@
   - Data-processing inequality
 
 - **Resource:**
-  - **Book:** *Elements of Information Theory* by Cover and Thomas
+  - **Book:** [*Elements of Information Theory*](https://cs-114.org/wp-content/uploads/2015/01/Elements_of_Information_Theory_Elements.pdf) by Cover and Thomas
     - **Sections to Focus On:** Chapters 2-4
 
 #### **6.2 Coarse-Graining and Information Loss**
@@ -198,7 +199,7 @@
   - Lindblad operators
 
 - **Resource:**
-  - **Book:** *The Theory of Open Quantum Systems* by Breuer and Petruccione
+  - **Book:** [*The Theory of Open Quantum Systems*](https://www.researchgate.net/publication/235426843_The_Theory_of_Open_Quantum_Systems) by Breuer and Petruccione
     - **Sections to Focus On:** Chapters 1-3 (skim for main ideas)
 
 #### **7.2 Decoherence and Emergence of Classicality**
