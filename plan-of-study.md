@@ -29,7 +29,7 @@
   - Measurement and eigenvalue problems
 
 - **Resource:**
-  - **Lecture Notes:** *Quantum Mechanics* by David J. Griffiths (Simplified version)
+  - **Lecture Notes:** [*Quantum Mechanics* by David J. Griffiths](https://www.fisica.net/mecanica-quantica/Griffiths%20-%20Introduction%20to%20quantum%20mechanics.pdf) (Simplified version)
     - **Sections to Focus On:** Introduction, Mathematical Foundations, The Postulates
 
 ---
