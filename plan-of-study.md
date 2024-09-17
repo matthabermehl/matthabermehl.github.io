@@ -98,7 +98,7 @@
 
 - **Resource:**
   - **Lecture:** *Quantum Complexity Theory* by John Watrous
-    - **Link:** [Watrous's Lecture Notes](https://cs.uwaterloo.ca/~watrous/CS766/lecture-notes/)
+    - **Link:** [Watrous's Lecture Notes](https://arxiv.org/pdf/0804.3401)
     - **Focus On:** Sections introducing quantum complexity classes and circuits
 
 ---
