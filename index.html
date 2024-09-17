@@ -128,11 +128,9 @@ MIS Theory addresses these challenges by introducing five foundational axioms th
     <h4>Mathematical Formulation</h4>
 
     <p><em>Hilbert Space Decomposition:</em></p>
-    <p>Consider a quantum system described by a Hilbert space \( \mathcal{H} \), which can be decomposed into a hierarchy of scales:</p>
-    <p>\[
-    \mathcal{H} = \bigotimes_{k=1}^{N} \mathcal{H}_k
-    \]
-    where \( \mathcal{H}_k \) represents the Hilbert space corresponding to scale \(k\).</p>
+    <p>Consider a quantum system whose Hilbert space \( \mathcal{H} \) can be factorized into a hierarchy of scales using a tensor product:
+$$ \mathcal{H} = \bigotimes_{s} \mathcal{H}_{s} $$
+where \( \mathcal{H}_{s} \) represents the Hilbert space corresponding to scale \( s \).</p>
 
     <p><em>State Decomposition:</em></p>
     <p>The state of the system is given by a density operator \( \rho \) acting on \( \mathcal{H} \). We can obtain the reduced states at each scale by performing partial traces:</p>
@@ -166,6 +164,11 @@ MIS Theory addresses these challenges by introducing five foundational axioms th
     \]
     where \( \lambda \) is the scale parameter, and \( \beta(\rho_k) \) is the beta functional describing the flow.</p>
 
+<p><em>Defining Circuit Complexity for Mixed States:</em></p>
+<p>While circuit complexity is traditionally defined for pure states, we extend this concept to mixed states by considering the minimal resources required to prepare \( \rho_{s} \) from a fixed reference mixed state \( \sigma_{s} \) using quantum operations. This can involve unitary operations, addition of ancillary systems, and partial tracing.</p>
+
+<p></p>Alternatively, we may employ Purification Complexity, where we consider the minimal circuit complexity of a purified version of \( \rho_{s} \) in an enlarged Hilbert space.</p>
+    
     <h4>Physical Interpretation</h4>
 
     <p>At microscopic scales (small \( \lambda \)), systems often exhibit high computational complexity due to intricate quantum correlations and entanglement. As we move to larger scales (increase \( \lambda \)), the system can be described by effective degrees of freedom with reduced complexity. This decomposition allows us to analyze how information and computational resources are distributed across scales, revealing structures and patterns that are not apparent when considering the system as a whole.</p>
@@ -243,6 +246,9 @@ MIS Theory addresses these challenges by introducing five foundational axioms th
     \]
     indicating that the macroscopic scale \( k+1 \) has stronger causal relationships than the microscopic scale \( k \).</p>
 
+    <p><em>Discussion of Effective Information and Its Limitations:</em></p>
+<p>While Effective Information provides a quantitative measure of causal relationships at different scales, its interpretation can be contentious. Critics argue that EI may not capture all aspects of causation or may be sensitive to the choice of interventions and observational granularity. We ensure that the calculation of EI in MIS Theory is complemented by other measures of causality and information flow.</p>
+
     <h4>Physical Interpretation</h4>
 
     <p>The loss of information during coarse-graining leads to the irreversibility of the process; one cannot fully recover the original microscopic state from the macroscopic description. This irreversibility allows for the emergence of novel properties and behaviors at the macroscopic scale that are not present or obvious at the microscopic level. The increase in effective information suggests that the macroscopic scale has more robust causal structures, making the system's behavior more predictable and meaningful at that level.</p>
@@ -284,6 +290,11 @@ MIS Theory addresses these challenges by introducing five foundational axioms th
     F_k(\text{id}_{\rho_k}) = \text{id}_{F_k(\rho_k)}
     \]</p>
 
+    <p><em>Concrete Example of Functorial Mapping:</em></p>
+<p>Consider the transition from quantum circuits at the microscopic scale to classical circuits at the macroscopic scale. We can define categories where objects are quantum gates (microscopic) and logic gates (macroscopic), with morphisms representing computational processes.</p>
+
+<p>The functor \( F \) maps quantum gates to their classical equivalents, preserving computational structures such as gate composition and circuit connectivity.</p>
+
     <h4>Physical Interpretation</h4>
 
     <p>By modeling scale transitions as functors between categories, we capture the structural relationships and transformations that occur between different levels of description. This formalism ensures that essential computational and physical properties are preserved, even as details are lost through coarse-graining. It provides a high-level abstraction that unifies the mathematical treatment of scale transitions and emergent phenomena.</p>
@@ -304,6 +315,10 @@ MIS Theory addresses these challenges by introducing five foundational axioms th
     <p>- \( \mathbf{J} \) is the information current.</p>
     <p>- \( \sigma \) represents sources or sinks of information.</p>
     <p>- \( K(t - t') \) is the memory kernel capturing non-Markovian effects.</p>
+
+     <p><em>Definitions:</em></p>
+<p>- Information Density \( I(\mathbf{r}, t) \): Defined as the local measure of information content per unit volume at position \( \mathbf{r} \) and time \( t \). It can be related to the von Neumann entropy density or other suitable information measures.</p>
+<p>- Information Current \( \mathbf{J}(\mathbf{r}, t) \): Represents the flow of information through space, analogous to probability or particle currents in statistical mechanics.</p>
 
     <p><em>Non-Markovian Dynamics:</em></p>
     <p>- <strong>Memory Effects:</strong> The integral term accounts for the system's history influencing its current dynamics.</p>
@@ -356,6 +371,9 @@ MIS Theory addresses these challenges by introducing five foundational axioms th
     <li>Provides a formalism for understanding how computational structures change across scales.</li>
     <li>Offers a new perspective on the role of information loss and computational simplification in emergence.</li>
 </ul>
+
+   <p><strong>Relation to Renormalization Group (RG) Methods:</strong></p>
+<p>MIS Theory extends RG methods by incorporating computational complexity and information measures into the scaling transformations. While RG focuses on the behavior of physical quantities under scale changes, MIS Theory adds a layer of analysis concerning the computational resources required to describe and predict system behavior.</p>
 
 <h2>4. Mathematical Rigor and Derivations</h2>
 
@@ -419,6 +437,20 @@ MIS Theory addresses these challenges by introducing five foundational axioms th
     <li><strong>Information Loss:</strong> Mutual information cannot increase under CPTP maps.</li>
 </ul>
 
+   <p><strong> Detailed Derivation of Complexity Reduction Under CPTP Maps:</strong></p>
+<p>Starting from the definition of circuit complexity \( C(\rho) \) for a state \( \rho \), and considering a CPTP map \( \Phi \), we aim to show that \( C(\Phi(\rho)) \leq C(\rho) + C(\Phi) \).</p>
+
+<p>Proof:</p>
+    <ol>
+<li>Preparation of \( \rho \): Requires a circuit of complexity \( C(\rho) \).</li>
+<li>Implementation of \( \Phi \): Can be represented by a quantum circuit of complexity \( C(\Phi) \).</li>
+<li>Combined Circuit: The preparation of \( \Phi(\rho) \) can be achieved by concatenating the circuits, yielding a total complexity \( C(\rho) + C(\Phi) \).</li>
+<li>Minimality of Complexity: Since \( C(\Phi(\rho)) \) is the minimal complexity to prepare \( \Phi(\rho) \), it follows that:
+$$ C(\Phi(\rho)) \leq C(\rho) + C(\Phi) $$
+    </li>
+        </ol>
+<p>Conclusion: This demonstrates that the complexity of the coarse-grained state is bounded by the sum of the complexities of the original state and the map.</p>
+
 <h2>5. Applications and Predictions</h2>
 
 <h3>5.1 Quantum Computing</h3>
@@ -465,6 +497,20 @@ MIS Theory addresses these challenges by introducing five foundational axioms th
 <ul>
     <li><strong>Information Loss Measurement:</strong> Study how decoherence affects computational complexity and information content in quantum systems.</li>
     <li><strong>Validation of Axioms:</strong> Empirical verification of the axioms, particularly those related to information loss and emergence.</li>
+</ul>
+
+     <p><strong>Proposed Experiments:</strong></p>
+<p>- Quantum Simulation with Cold Atoms:</p>
+    <ul>
+  <li>Setup: Use ultracold atoms in optical lattices to simulate spin chains or other many-body quantum systems.</li>
+  <li>Objective: Measure the circuit complexity and effective information at different scales by manipulating the interactions and observing the resulting states.</li>
+  <li>Method: Implement controlled coarse-graining by adjusting the lattice parameters and perform tomography to reconstruct reduced states.</li>
+</ul>
+<p>- Superconducting Qubits:</p>
+    <ul>
+  <li>Setup: Utilize superconducting circuits to create scalable quantum systems with tunable interactions.</li>
+  <li>Objective: Test the emergence of macroscopic properties from microscopic dynamics by observing decoherence and entanglement patterns.</li>
+  <li>Method: Apply sequences of quantum gates to prepare states and measure the computational complexity using gate counts and fidelity assessments.</li>
 </ul>
 
 <p><strong>Example:</strong></p>
@@ -531,6 +577,8 @@ The <strong>Multi-Scale Information Supervenience (MIS) Theory</strong> offers a
     <li><strong>Practical Applications:</strong> Suggests potential applications in quantum computing, complex systems, and other fields, with avenues for experimental validation.</li>
 </ul>
 
+
+
 <p><strong>Outlook:</strong></p>
 <p>
 MIS Theory represents a significant step toward a deeper understanding of how complex phenomena arise from simpler components. By continuing to refine the theory, address its limitations, and explore new applications, we can further unravel the mechanisms of emergence and contribute to advancements in physics and other disciplines.
@@ -538,6 +586,8 @@ MIS Theory represents a significant step toward a deeper understanding of how co
 
 <h2>References</h2>
 <ul>
+    <li>Abramsky, S., & Coecke, B. (2004). A categorical semantics of quantum protocols. Proceedings of the 19th Annual IEEE Symposium on Logic in Computer Science, 415-425.</li>
+    <li>Breuer, H.-P., & Petruccione, F. (2002). The Theory of Open Quantum Systems. Oxford University Press.</li>
     <li>Nielsen, M. A., & Chuang, I. L. (2010). <em>Quantum Computation and Quantum Information</em>. Cambridge University Press.</li>
     <li>Wolfram, S. (2002). <em>A New Kind of Science</em>. Wolfram Media.</li>
     <li>Hoel, E. (2017). When the Map Is Better Than the Territory. <em>Entropy</em>, 19(5), 188.</li>
@@ -549,6 +599,7 @@ MIS Theory represents a significant step toward a deeper understanding of how co
     <li>Wilson, K. G. (1975). The renormalization group: Critical phenomena and the Kondo problem. <em>Reviews of Modern Physics</em>, 47(4), 773.</li>
     <li>Brown, W., & Violi, A. (2020). Computational Complexity in Quantum Systems. <em>Journal of Complexity</em>, 45, 100101.</li>
     <li>Kim, J. (1998). <em>Mind in a Physical World: An Essay on the Mind-Body Problem and Mental Causation</em>. MIT Press.</li>
+    <li>Watrous, J. (2018). The Theory of Quantum Information. Cambridge University Press.</li>
 </ul>
 
 <h2>Appendices</h2>
