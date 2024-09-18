@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>MIS Theory Visualization</title>
+<style>
+  body {
+    margin: 0;
+    overflow: hidden;
+    background-color: #000;
+  }
+  canvas {
+    display: block;
+  }
+  #controls {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    color: #fff;
+    font-family: Arial, sans-serif;
+  }
+  #controls input {
+    margin: 5px;
+  }
+</style>
+</head>
+<body>
+<canvas id="misCanvas"></canvas>
+
+<div id="controls">
+  <label>
+    Nodes per Level:
+    <input type="range" id="nodesPerLevel" min="5" max="50" value="20">
+    <span id="nodesPerLevelValue">20</span>
+  </label><br>
+  <label>
+    Intra-Scale Connection Probability:
+    <input type="range" id="intraProb" min="0" max="1" step="0.01" value="0.1">
+    <span id="intraProbValue">0.10</span>
+  </label><br>
+  <label>
+    Inter-Scale Connection Probability:
+    <input type="range" id="interProb" min="0" max="1" step="0.01" value="0.05">
+    <span id="interProbValue">0.05</span>
+  </label><br>
+  <button id="resetButton">Reset Network</button>
+</div>
+
+<script>
+// MIS Theory Visualization with Vertical Organization and Gradual Animation
+
+// Get the canvas and context
+const canvas = document.getElementById('misCanvas');
+const ctx = canvas.getContext('2d');
+
+// Resize canvas to full window size
+canvas.width = window.innerWidth;
+canvas.height = window.innerHeight;
+
+// Adjust canvas size on window resize
+window.addEventListener('resize', function() {
+  canvas.width = window.innerWidth;
+  canvas.height = window.innerHeight;
+  drawBackground();
+});
+
+// Get controls
+const nodesPerLevelInput = document.getElementById('nodesPerLevel');
+const nodesPerLevelValue = document.getElementById('nodesPerLevelValue');
+const intraProbInput = document.getElementById('intraProb');
+const intraProbValue = document.getElementById('intraProbValue');
+const interProbInput = document.getElementById('interProb');
+const interProbValue = document.getElementById('interProbValue');
+const resetButton = document.getElementById('resetButton');
+
+// Update control values display
+nodesPerLevelInput.addEventListener('input', () => {
+  nodesPerLevelValue.textContent = nodesPerLevelInput.value;
+});
+intraProbInput.addEventListener('input', () => {
+  intraProbValue.textContent = parseFloat(intraProbInput.value).toFixed(2);
+});
+interProbInput.addEventListener('input', () => {
+  interProbValue.textContent = parseFloat(interProbInput.value).toFixed(2);
+});
+
+// Node class representing entities at different scales
+class Node {
+  constructor(x, y, level) {
+    this.x = x;
+    this.y = y;
+    this.level = level; // Scale level: 1 (micro), 2 (meso), 3 (macro)
+    this.connections = [];
+    this.state = Math.random(); // State variable between 0 and 1
+    this.influence = 0; // Accumulated influence from other nodes
+    this.size = level === 1 ? 5 : level === 2 ? 10 : 15;
+    this.baseColor = level === 1 ? { r: 0, g: 255, b: 0 } :
+                     level === 2 ? { r: 255, g: 255, b: 0 } :
+                                   { r: 255, g: 0, b: 0 };
+    this.color = this.baseColor;
+  }
+
+  // Update node state based on influences
+  update() {
+    // Smoothly adjust state towards accumulated influence
+    this.state += (this.influence - this.state) * 0.05;
+    // Keep state within [0,1]
+    if (this.state > 1) this.state = 1;
+    if (this.state < 0) this.state = 0;
+    // Reset influence
+    this.influence = this.state; // Start next cycle with current state
+    // Update color intensity based on state
+    this.color = {
+      r: this.baseColor.r * this.state,
+      g: this.baseColor.g * this.state,
+      b: this.baseColor.b * this.state
+    };
+  }
+
+  // Draw the node
+  draw(ctx) {
+    ctx.beginPath();
+    ctx.arc(this.x, this.y, this.size + this.state * 5, 0, Math.PI * 2);
+    ctx.fillStyle = `rgb(${this.color.r}, ${this.color.g}, ${this.color.b})`;
+    ctx.fill();
+  }
+}
+
+// Variables for nodes and parameters
+let nodes = [];
+let numNodesPerLevel = parseInt(nodesPerLevelInput.value);
+let intraScaleProb = parseFloat(intraProbInput.value);
+let interScaleProb = parseFloat(interProbInput.value);
+
+// Function to create nodes at different scales
+function createNodes() {
+  nodes = [];
+  numNodesPerLevel = parseInt(nodesPerLevelInput.value);
+  const levelHeight = canvas.height / 3;
+
+  // Generate nodes for each level
+  for (let level = 1; level <= 3; level++) {
+    for (let i = 0; i < numNodesPerLevel; i++) {
+      const x = Math.random() * canvas.width;
+      // Position y based on level
+      const yMin = canvas.height - level * levelHeight;
+      const yMax = canvas.height - (level - 1) * levelHeight;
+      const y = yMin + Math.random() * (yMax - yMin);
+
+      const node = new Node(x, y, level);
+      nodes.push(node);
+    }
+  }
+}
+
+// Create connections between nodes
+function createConnections() {
+  intraScaleProb = parseFloat(intraProbInput.value);
+  interScaleProb = parseFloat(interProbInput.value);
+  // Clear existing connections
+  nodes.forEach(node => {
+    node.connections = [];
+  });
+
+  // Intra-scale connections
+  nodes.forEach(node => {
+    nodes.forEach(otherNode => {
+      if (node !== otherNode && node.level === otherNode.level) {
+        if (Math.random() < intraScaleProb) {
+          node.connections.push({ node: otherNode, weight: Math.random() });
+        }
+      }
+    });
+  });
+
+  // Inter-scale connections
+  nodes.forEach(node => {
+    nodes.forEach(otherNode => {
+      if (node.level !== otherNode.level) {
+        if (Math.random() < interScaleProb) {
+          node.connections.push({ node: otherNode, weight: Math.random() });
+        }
+      }
+    });
+  });
+}
+
+// Function to draw background
+function drawBackground() {
+  ctx.fillStyle = '#000';
+  ctx.fillRect(0, 0, canvas.width, canvas.height);
+}
+
+// Animation loop
+function animate() {
+  // Clear canvas
+  drawBackground();
+
+  // Update node states based on influences
+  nodes.forEach(node => {
+    // Accumulate influence from connections
+    let totalInfluence = 0;
+    let totalWeight = 0;
+    node.connections.forEach(connection => {
+      const influence = connection.node.state * connection.weight;
+      totalInfluence += influence;
+      totalWeight += connection.weight;
+    });
+    if (totalWeight > 0) {
+      node.influence = totalInfluence / totalWeight;
+    } else {
+      node.influence = node.state;
+    }
+  });
+
+  // Update nodes
+  nodes.forEach(node => {
+    node.update();
+  });
+
+  // Draw connections
+  nodes.forEach(node => {
+    node.connections.forEach(connection => {
+      drawConnection(ctx, node, connection.node, connection.weight);
+    });
+  });
+
+  // Draw nodes
+  nodes.forEach(node => {
+    node.draw(ctx);
+  });
+
+  requestAnimationFrame(animate);
+}
+
+// Draw connection between two nodes
+function drawConnection(ctx, nodeA, nodeB, weight) {
+  ctx.beginPath();
+  ctx.moveTo(nodeA.x, nodeA.y);
+  ctx.lineTo(nodeB.x, nodeB.y);
+  const gradient = ctx.createLinearGradient(nodeA.x, nodeA.y, nodeB.x, nodeB.y);
+  gradient.addColorStop(0, `rgb(${nodeA.color.r}, ${nodeA.color.g}, ${nodeA.color.b})`);
+  gradient.addColorStop(1, `rgb(${nodeB.color.r}, ${nodeB.color.g}, ${nodeB.color.b})`);
+  ctx.strokeStyle = gradient;
+  ctx.lineWidth = weight * 1.5;
+  ctx.globalAlpha = 0.3;
+  ctx.stroke();
+  ctx.globalAlpha = 1.0;
+}
+
+// Initialize and start the animation
+function init() {
+  createNodes();
+  createConnections();
+  animate();
+}
+
+// Reset network when parameters change
+resetButton.addEventListener('click', () => {
+  createNodes();
+  createConnections();
+});
+
+// Periodically recreate connections to simulate dynamic interactions
+setInterval(() => {
+  createConnections();
+}, 100); // Update every 10 seconds for smoother transitions
+
+// Start the visualization
+drawBackground();
+init();
+
+</script>
+</body>
+</html>
